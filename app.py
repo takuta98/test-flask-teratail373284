@@ -9,8 +9,8 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/scraping')
-def get():
+@app.route('/scraping', methods=["GET"])
+def do_scraping():
     result = scraping.scraping()
     return render_template('result.html', result=result)
 
